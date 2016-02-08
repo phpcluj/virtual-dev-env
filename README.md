@@ -2,7 +2,7 @@
 Learn about creating a virtual development environment and provisioning it
 
 
-DOCKER - image
+DOCKER - php apache image
 
 to pull the image :
  
@@ -11,6 +11,22 @@ to pull the image :
 to run the image :
 
      sudo docker run -d -p 127.0.0.1:8080:80 --name web -v /var/www/site:/var/www/site ralucaonaca/first-site 
+
+DOCKER compose file
+
+     1. cd docker-image-compose
+   
+     2. sudo docker-compose up
+   
+     3. daca nu cumva aveti imaginea de mai sus atunci trebuie sa se modifice docker-compose.yml 
+          ca in loc de image : ralucaonaca/first-site:latest sa fie build: . - directorul curent unde se afla Dockerfile
+
+     4. in var/www/site ad or change any file :)it's syncs auto with the container in var/www/site
+
+     - mai trebuie sa setez porturile la mysql si parola si username-ul
+ 
+     - apache ServerName sa setez in apache-config.conf
+ 
 
 to build the image:
 
